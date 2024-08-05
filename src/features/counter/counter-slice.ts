@@ -15,11 +15,18 @@ const counterSlice =  createSlice({
 //under the hood 'immer' makes it immutablea
         state.value++;
       },
+//second slice: add a specific number
+      amountAdded(state, 
+          action: PayloadAction<number>) {
+        state.value=state.value+action.payload;
+      }
         //decrement
-      decremented() {},
+     // decremented() {},
         //reset
-      reset() {},
+      //reset() {},
     },
 });
-export const { incremented } = counterSlice.actions;
+export const { incremented,
+      amountAdded,
+ } = counterSlice.actions;
 export default counterSlice.reducer;
